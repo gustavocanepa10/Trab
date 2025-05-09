@@ -14,6 +14,7 @@ export default function App() {
   })
   const [result, setResult] = useState("")
   const [classi, setClassi] = useState("")
+  const [sex, setSex] = useState("")
 
 
   function onSubmit(data) {
@@ -26,6 +27,10 @@ export default function App() {
     
 
     const imc =  peso / (altura * altura);
+
+    setSex(sexo)
+
+   
 
 
 
@@ -51,21 +56,17 @@ export default function App() {
 
     setResult(imc.toFixed(2))
 
+    
+
     setClassi(classificação)
+
+
 
 
     
   }
 
-
-  
-
-
-
-
-
-
-  return (
+return (
     <div>
 
       <h2>Calculadora IMC</h2>
@@ -108,7 +109,12 @@ export default function App() {
       {classi && (
         <div>
           <p>
-            Classificação : <br></br>{classi}
+            Classificação : {classi}
+           
+          </p>
+
+          <p>
+          Sexo : {sex}
           </p>
         </div>
       )}
